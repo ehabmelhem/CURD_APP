@@ -1,8 +1,28 @@
-import React from "react"
+import React ,{useState} from "react"
 
-const Add: React.FC = () => {
+type props = {
+    name?: string
+}
+
+const Add: React.FC<props> = ({ name }) => {
+    const [user,setUser]=useState("")
+    const [pass,setPass]=useState("")
+    const submitHandler=(e:any)=>{
+        e.preventDefault();
+
+    }
     return (
-        <h1>this is Add compent</h1>
+        <form className="flex">
+            <input onChange={(e)=>{
+                setUser(e.target.value)
+            }} placeholder="add user" type="text"/>
+            <br/>
+            <input onChange={(e)=>{
+                setPass(e.target.value)
+            }} placeholder="add password" type="password"/>
+            <br/>
+            <input onClick={submitHandler}  className="submit" type="submit" value="ADD user"/>
+        </form>
     )
 };
 

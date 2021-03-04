@@ -1,0 +1,21 @@
+{
+  "name": "CURD_APP",
+  "version": "1.0.0",
+  "description": "Simple CURD APP with React, Mongo DB and TypeScript",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehabmelhem/CURD_APP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehabmelhem/CURD_APP/issues"
+  },
+  "homepage": "https://github.com/ehabmelhem/CURD_APP#readme"
+}

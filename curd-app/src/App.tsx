@@ -1,14 +1,26 @@
 import React from 'react';
 import './App.css';
+import Add from "./Compents/Add"
+import Get from "./Compents/Get"
+import Delete from "./Compents/Delete"
+import Update from "./Compents/Update"
 
 
 const App: React.FC = () => {
   return (
     <>
-   {/* ADD */}
-   {/* Get */}
-   {/* update */}
-   {/* Delete */}
+      <div className="app">
+
+        {/* ADD */}
+        <Add />
+        {/* Get */}
+        <Get />
+        {/* update */}
+        <Update />
+        {/* Delete */}
+        <Delete />
+      </div>
+
     </>
   )
 }
