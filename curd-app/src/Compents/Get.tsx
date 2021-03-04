@@ -2,22 +2,25 @@ import React,{useState} from "react"
 
 const Get: React.FC = () => {
     const [user,setUser]=useState("")
-    const [pass,setPass]=useState("")
-    const submitHandler=(e:any)=>{
+    const submitHandler= async(e:any)=>{
         e.preventDefault();
-
+        await fetch(`/get-password?username=${user}`).then(r=>r.json()).then(data=>{
+            if(data.index===-1){
+                alert("insert right valids")
+            }
+            else{
+                alert("password: "+data.password)
+            }
+        })
     }
     return (
         <form className="flex" >
             <input onChange={(e)=>{
                 setUser(e.target.value)
-            }} placeholder="Insert password" type="text" />
+            }} placeholder="Insert user" type="text" />
             <br />
-            <input onChange={(e)=>{
-                setPass(e.target.value)
-            }}placeholder="Insert password" type="password" />
-            <br />
-            <input onClick={submitHandler} className="submit" type="submit" value="Get password" />
+      
+            <input disabled={!user} onClick={submitHandler} className="submit" type="submit" value="Get password" />
         </form>
     )
 };
